@@ -10,6 +10,7 @@
 #import "MovieDetailsViewController.h"
 #import "Movie.h"
 #import "MovieCell.h"
+#import "MovieReview.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -75,7 +76,6 @@
     // Call resume on the task to start it -- like pressing enter in a web browser to navigate to a webpage/ retrieve the data
     [dataTask resume];
     
-//    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,9 +111,10 @@
     
     MovieDetailsViewController *detailVC = (MovieDetailsViewController *) segue.destinationViewController;
     NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+
     Movie *cellData = [self.movieObjects objectAtIndex:indexPath.row];
-    detailVC.movieDetails = cellData;
     
+    detailVC.movieDetails = cellData;
 }
 
 @end

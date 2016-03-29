@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Movie.h"
+#import "MovieReview.h"
 
 @interface MovieDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsTitle;
@@ -15,7 +16,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsMPAA;
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsRunTime;
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsSynopsis;
+@property (weak, nonatomic) IBOutlet UILabel *review1;
+@property (weak, nonatomic) IBOutlet UILabel *review2;
+@property (weak, nonatomic) IBOutlet UILabel *review3;
+
 
 @property (strong, nonatomic) Movie *movieDetails;
+@property (strong, nonatomic) MovieReview *reviewDetails;
 
 @end

@@ -17,6 +17,7 @@
 		31C316D71CA99DDD00C0F56E /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316D61CA99DDD00C0F56E /* Movie.m */; };
 		31C316DA1CA9B30100C0F56E /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316D91CA9B30100C0F56E /* MovieCell.m */; };
 		31C316DD1CA9C5E300C0F56E /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */; };
+		31C316E01CAADA5200C0F56E /* MovieReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316DF1CAADA5200C0F56E /* MovieReview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		31C316D91CA9B30100C0F56E /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		31C316DB1CA9C5E300C0F56E /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
 		31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
+		31C316DE1CAADA5200C0F56E /* MovieReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReview.h; sourceTree = "<group>"; };
+		31C316DF1CAADA5200C0F56E /* MovieReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */,
 				31C316D51CA99DDD00C0F56E /* Movie.h */,
 				31C316D61CA99DDD00C0F56E /* Movie.m */,
+				31C316DE1CAADA5200C0F56E /* MovieReview.h */,
+				31C316DF1CAADA5200C0F56E /* MovieReview.m */,
 				31C316D81CA9B30100C0F56E /* MovieCell.h */,
 				31C316D91CA9B30100C0F56E /* MovieCell.m */,
 				31C316C41CA99D0100C0F56E /* Main.storyboard */,
@@ -169,6 +174,7 @@
 			files = (
 				31C316C91CA99D0100C0F56E /* RottenMangoes.xcdatamodeld in Sources */,
 				31C316C31CA99D0100C0F56E /* ViewController.m in Sources */,
+				31C316E01CAADA5200C0F56E /* MovieReview.m in Sources */,
 				31C316DA1CA9B30100C0F56E /* MovieCell.m in Sources */,
 				31C316DD1CA9C5E300C0F56E /* MovieDetailsViewController.m in Sources */,
 				31C316D71CA99DDD00C0F56E /* Movie.m in Sources */,
@@ -322,6 +328,7 @@
 				31C316D41CA99D0100C0F56E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
