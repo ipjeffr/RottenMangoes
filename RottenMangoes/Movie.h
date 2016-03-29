@@ -12,7 +12,10 @@
 
 @property (strong, nonatomic) NSString *movieTitle;
 @property (strong, nonatomic) NSString *movieSynopsis;
-
-
+@property (strong, nonatomic) NSString *movieMPAARating;
+@property (strong, nonatomic) NSNumber *movieYear;
+@property (strong, nonatomic) NSNumber *movieRunTime;
+@property (strong, nonatomic) NSDictionary *moviePosters;
+@property (strong, nonatomic) NSDictionary *movieLinks;
 
 @end

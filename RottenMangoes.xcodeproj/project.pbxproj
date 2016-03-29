@@ -15,6 +15,8 @@
 		31C316CB1CA99D0100C0F56E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C316CA1CA99D0100C0F56E /* Assets.xcassets */; };
 		31C316CE1CA99D0100C0F56E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C316CC1CA99D0100C0F56E /* LaunchScreen.storyboard */; };
 		31C316D71CA99DDD00C0F56E /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316D61CA99DDD00C0F56E /* Movie.m */; };
+		31C316DA1CA9B30100C0F56E /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316D91CA9B30100C0F56E /* MovieCell.m */; };
+		31C316DD1CA9C5E300C0F56E /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		31C316CF1CA99D0100C0F56E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C316D51CA99DDD00C0F56E /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		31C316D61CA99DDD00C0F56E /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		31C316D81CA9B30100C0F56E /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		31C316D91CA9B30100C0F56E /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		31C316DB1CA9C5E300C0F56E /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
+		31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +69,14 @@
 		31C316BA1CA99D0000C0F56E /* RottenMangoes */ = {
 			isa = PBXGroup;
 			children = (
-				31C316BE1CA99D0100C0F56E /* AppDelegate.h */,
-				31C316BF1CA99D0100C0F56E /* AppDelegate.m */,
 				31C316C11CA99D0100C0F56E /* ViewController.h */,
 				31C316C21CA99D0100C0F56E /* ViewController.m */,
+				31C316DB1CA9C5E300C0F56E /* MovieDetailsViewController.h */,
+				31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */,
 				31C316D51CA99DDD00C0F56E /* Movie.h */,
 				31C316D61CA99DDD00C0F56E /* Movie.m */,
+				31C316D81CA9B30100C0F56E /* MovieCell.h */,
+				31C316D91CA9B30100C0F56E /* MovieCell.m */,
 				31C316C41CA99D0100C0F56E /* Main.storyboard */,
 				31C316CA1CA99D0100C0F56E /* Assets.xcassets */,
 				31C316CC1CA99D0100C0F56E /* LaunchScreen.storyboard */,
@@ -82,6 +90,8 @@
 		31C316BB1CA99D0000C0F56E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				31C316BE1CA99D0100C0F56E /* AppDelegate.h */,
+				31C316BF1CA99D0100C0F56E /* AppDelegate.m */,
 				31C316BC1CA99D0100C0F56E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -159,6 +169,8 @@
 			files = (
 				31C316C91CA99D0100C0F56E /* RottenMangoes.xcdatamodeld in Sources */,
 				31C316C31CA99D0100C0F56E /* ViewController.m in Sources */,
+				31C316DA1CA9B30100C0F56E /* MovieCell.m in Sources */,
+				31C316DD1CA9C5E300C0F56E /* MovieDetailsViewController.m in Sources */,
 				31C316D71CA99DDD00C0F56E /* Movie.m in Sources */,
 				31C316C01CA99D0100C0F56E /* AppDelegate.m in Sources */,
 				31C316BD1CA99D0100C0F56E /* main.m in Sources */,

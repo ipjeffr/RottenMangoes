@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "MovieDetailsViewController.h"
 #import "Movie.h"
+#import "MovieCell.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -43,7 +45,12 @@
                 for (NSDictionary *moviesDict in jsonObject[@"movies"]) {
                     Movie *movies = [[Movie alloc] init];
                     movies.movieTitle = moviesDict[@"title"];
+                    movies.movieYear = moviesDict[@"year"];
+                    movies.movieMPAARating = moviesDict [@"mpaa_rating"];
+                    movies.movieRunTime = moviesDict [@"runtime"];
                     movies.movieSynopsis = moviesDict[@"synopsis"];
+                    movies.moviePosters = moviesDict[@"posters"];
+                    movies.movieLinks = moviesDict[@"links"];
                     
                     [moviesArray addObject:movies];
                 }
@@ -76,13 +83,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return self.movieObjects.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    
+    MovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    //defines one specific movie objects in the array of movie objects we've defined above; each contains properties defined in the class -- retrieve those for display
+    Movie *movie = self.movieObjects[indexPath.item];
+    
+    NSString *posterURL = [movie.moviePosters objectForKey:@"thumbnail"];
+    
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: posterURL]];
+    
+    cell.moviePoster.image = [UIImage imageWithData: imageData];
+    
+    return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    MovieDetailsViewController *detailVC = (MovieDetailsViewController *) segue.destinationViewController;
+    NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+    Movie *cellData = [self.movieObjects objectAtIndex:indexPath.row];
+    detailVC.movieDetails = cellData;
+    
 }
 
 @end
