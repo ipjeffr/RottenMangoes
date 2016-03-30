@@ -7,6 +7,8 @@
 //
 
 #import "MovieDetailsViewController.h"
+#import "MapViewController.h"
+#import "Movie.h"
 #import "MovieReview.h"
 
 @interface MovieDetailsViewController ()
@@ -71,29 +73,17 @@
     self.movieDetailsMPAA.text = self.movieDetails.movieMPAARating;
     self.movieDetailsRunTime.text = [self.movieDetails.movieRunTime stringValue];
     self.movieDetailsSynopsis.text = self.movieDetails.movieSynopsis;
-
-    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)updateReviews {
     self.review1.text = [NSString stringWithFormat:@"%@\n<%@>\n%@", [self.reviewObjects[0] reviewCritic], [self.reviewObjects[0] reviewFreshness], [self.reviewObjects[0] reviewQuote]];
     self.review2.text = [NSString stringWithFormat:@"%@\n<%@>\n%@", [self.reviewObjects[1] reviewCritic], [self.reviewObjects[1] reviewFreshness], [self.reviewObjects[1] reviewQuote]];
     self.review3.text = [NSString stringWithFormat:@"%@\n<%@>\n%@", [self.reviewObjects[2] reviewCritic], [self.reviewObjects[2] reviewFreshness], [self.reviewObjects[2] reviewQuote]];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MapViewController *theatreVC = (MapViewController *) segue.destinationViewController;
+    theatreVC.movieDetailsForTitle = self.movieDetails;
 }
 
 @end

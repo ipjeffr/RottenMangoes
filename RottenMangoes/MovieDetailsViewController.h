@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Movie.h"
-#import "MovieReview.h"
+@class Movie;
+@class MovieReview;
 
 @interface MovieDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsTitle;

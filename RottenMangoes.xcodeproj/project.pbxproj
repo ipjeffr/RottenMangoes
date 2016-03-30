@@ -18,6 +18,9 @@
 		31C316DA1CA9B30100C0F56E /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316D91CA9B30100C0F56E /* MovieCell.m */; };
 		31C316DD1CA9C5E300C0F56E /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */; };
 		31C316E01CAADA5200C0F56E /* MovieReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316DF1CAADA5200C0F56E /* MovieReview.m */; };
+		31C316E31CAB0E5500C0F56E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316E21CAB0E5500C0F56E /* MapViewController.m */; };
+		31C316E71CAB11BB00C0F56E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C316E61CAB11BB00C0F56E /* MapKit.framework */; };
+		31C316EB1CAB3A2400C0F56E /* Theatre.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C316EA1CAB3A2400C0F56E /* Theatre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,12 @@
 		31C316DC1CA9C5E300C0F56E /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 		31C316DE1CAADA5200C0F56E /* MovieReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieReview.h; sourceTree = "<group>"; };
 		31C316DF1CAADA5200C0F56E /* MovieReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieReview.m; sourceTree = "<group>"; };
+		31C316E11CAB0E5500C0F56E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		31C316E21CAB0E5500C0F56E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		31C316E61CAB11BB00C0F56E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		31C316E81CAB28A600C0F56E /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		31C316E91CAB3A2400C0F56E /* Theatre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theatre.h; sourceTree = "<group>"; };
+		31C316EA1CAB3A2400C0F56E /* Theatre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theatre.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31C316E71CAB11BB00C0F56E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +66,7 @@
 		31C316AF1CA99D0000C0F56E = {
 			isa = PBXGroup;
 			children = (
+				31C316E61CAB11BB00C0F56E /* MapKit.framework */,
 				31C316BA1CA99D0000C0F56E /* RottenMangoes */,
 				31C316B91CA99D0000C0F56E /* Products */,
 			);
@@ -82,11 +93,13 @@
 				31C316DF1CAADA5200C0F56E /* MovieReview.m */,
 				31C316D81CA9B30100C0F56E /* MovieCell.h */,
 				31C316D91CA9B30100C0F56E /* MovieCell.m */,
+				31C316E11CAB0E5500C0F56E /* MapViewController.h */,
+				31C316E21CAB0E5500C0F56E /* MapViewController.m */,
+				31C316E81CAB28A600C0F56E /* Location.gpx */,
+				31C316E91CAB3A2400C0F56E /* Theatre.h */,
+				31C316EA1CAB3A2400C0F56E /* Theatre.m */,
 				31C316C41CA99D0100C0F56E /* Main.storyboard */,
-				31C316CA1CA99D0100C0F56E /* Assets.xcassets */,
-				31C316CC1CA99D0100C0F56E /* LaunchScreen.storyboard */,
 				31C316CF1CA99D0100C0F56E /* Info.plist */,
-				31C316C71CA99D0100C0F56E /* RottenMangoes.xcdatamodeld */,
 				31C316BB1CA99D0000C0F56E /* Supporting Files */,
 			);
 			path = RottenMangoes;
@@ -95,6 +108,9 @@
 		31C316BB1CA99D0000C0F56E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				31C316C71CA99D0100C0F56E /* RottenMangoes.xcdatamodeld */,
+				31C316CA1CA99D0100C0F56E /* Assets.xcassets */,
+				31C316CC1CA99D0100C0F56E /* LaunchScreen.storyboard */,
 				31C316BE1CA99D0100C0F56E /* AppDelegate.h */,
 				31C316BF1CA99D0100C0F56E /* AppDelegate.m */,
 				31C316BC1CA99D0100C0F56E /* main.m */,
@@ -133,6 +149,11 @@
 				TargetAttributes = {
 					31C316B71CA99D0000C0F56E = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -175,7 +196,9 @@
 				31C316C91CA99D0100C0F56E /* RottenMangoes.xcdatamodeld in Sources */,
 				31C316C31CA99D0100C0F56E /* ViewController.m in Sources */,
 				31C316E01CAADA5200C0F56E /* MovieReview.m in Sources */,
+				31C316E31CAB0E5500C0F56E /* MapViewController.m in Sources */,
 				31C316DA1CA9B30100C0F56E /* MovieCell.m in Sources */,
+				31C316EB1CAB3A2400C0F56E /* Theatre.m in Sources */,
 				31C316DD1CA9C5E300C0F56E /* MovieDetailsViewController.m in Sources */,
 				31C316D71CA99DDD00C0F56E /* Movie.m in Sources */,
 				31C316C01CA99D0100C0F56E /* AppDelegate.m in Sources */,
