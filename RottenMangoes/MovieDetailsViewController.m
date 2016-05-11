@@ -2,7 +2,7 @@
 //  MovieDetailsViewController.m
 //  RottenMangoes
 //
-//  Created by Tenzin Phagdol on 2016-03-28.
+//  Created by Jeffrey Ip on 2016-03-28.
 //  Copyright © 2016 Jeffrey Ip. All rights reserved.
 //
 
@@ -10,10 +10,12 @@
 #import "MapViewController.h"
 #import "Movie.h"
 #import "MovieReview.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MovieDetailsViewController ()
 
 @property NSMutableArray *reviewObjects;
+@property (weak, nonatomic) IBOutlet UIButton *mapButton;
 
 @end
 
@@ -21,8 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    [self getReviews];
+    self.mapButton.layer.cornerRadius = 8;
+    self.mapButton.clipsToBounds = YES;
+
+}
+
+- (void)getReviews {
     NSString *reviewsURL = [self.movieDetails.movieLinks objectForKey:@"reviews"];
     NSString *reviewsURLwithAPI = [reviewsURL stringByAppendingString:@"?apikey=2ckft9dtnazuw4ks5qq3uhzu"];
     
@@ -53,7 +60,7 @@
                 NSLog(@"reviews: %@", reviewArray);
                 
                 self.reviewObjects = reviewArray;
-            
+                
                 //essentially updates the UI after gathering the API data
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self updateReviews];
@@ -71,14 +78,28 @@
     self.movieDetailsTitle.text = self.movieDetails.movieTitle;
     self.movieDetailsYear.text = [self.movieDetails.movieYear stringValue];
     self.movieDetailsMPAA.text = self.movieDetails.movieMPAARating;
-    self.movieDetailsRunTime.text = [self.movieDetails.movieRunTime stringValue];
+    self.movieDetailsRunTime.text = [[self.movieDetails.movieRunTime stringValue] stringByAppendingString:@" min"];
     self.movieDetailsSynopsis.text = self.movieDetails.movieSynopsis;
 }
 
 - (void)updateReviews {
-    self.review1.text = [NSString stringWithFormat:@"%@\n<%@>\n%@", [self.reviewObjects[0] reviewCritic], [self.reviewObjects[0] reviewFreshness], [self.reviewObjects[0] reviewQuote]];
-    self.review2.text = [NSString stringWithFormat:@"%@\n<%@>\n%@", [self.reviewObjects[1] reviewCritic], [self.reviewObjects[1] reviewFreshness], [self.reviewObjects[1] reviewQuote]];
-    self.review3.text = [NSString stringWithFormat:@"%@\n<%@>\n%@", [self.reviewObjects[2] reviewCritic], [self.reviewObjects[2] reviewFreshness], [self.reviewObjects[2] reviewQuote]];
+    self.review1.text = [NSString stringWithFormat:@"%@\n%@", [self.reviewObjects[0] reviewCritic], [self.reviewObjects[0] reviewQuote]];
+    self.reviewFreshness1.image = [self rottenOrFresh:[self.reviewObjects[0] reviewFreshness]];
+    self.review2.text = [NSString stringWithFormat:@"%@\n%@", [self.reviewObjects[1] reviewCritic], [self.reviewObjects[1] reviewQuote]];
+    self.reviewFreshness2.image = [self rottenOrFresh:[self.reviewObjects[1] reviewFreshness]];
+    self.review3.text = [NSString stringWithFormat:@"%@\n%@", [self.reviewObjects[2] reviewCritic], [self.reviewObjects[2] reviewQuote]];
+    self.reviewFreshness3.image = [self rottenOrFresh:[self.reviewObjects[2] reviewFreshness]];
+    
+}
+
+- (UIImage *)rottenOrFresh:(NSString *)freshness {
+    if ([freshness isEqualToString:@"fresh"]) {
+        UIImage *image = [UIImage imageNamed:@"tomato"];
+        return image;
+    } else {
+        UIImage *image = [UIImage imageNamed:@"splat"];
+        return image;
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

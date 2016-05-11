@@ -2,7 +2,7 @@
 //  ViewController.m
 //  RottenMangoes
 //
-//  Created by Tenzin Phagdol on 2016-03-28.
+//  Created by Jeffrey Ip on 2016-03-28.
 //  Copyright © 2016 Jeffrey Ip. All rights reserved.
 //
 
@@ -23,10 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+
+    self.navigationItem.title = @"Rotten Mangoes";
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self getRottenTomatoesData];
+}
+
+- (void)getRottenTomatoesData {
     // We need to create a NSURL of the api we want to access
-    NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=2ckft9dtnazuw4ks5qq3uhzu"];
+    NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=2ckft9dtnazuw4ks5qq3uhzu&page_limit=30"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     
     NSURLSession *session = [NSURLSession sharedSession];
@@ -41,8 +47,8 @@
             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
             if (!jsonError) {
                 NSMutableArray *moviesArray = [NSMutableArray array];
-            
-            //jsonObject[@"movies"] grabs all of the objects/values associated with the key @"movies" in the jsonObject NSDictionary (see JSON View in Google)
+                
+                //jsonObject[@"movies"] grabs all of the objects/values associated with the key @"movies" in the jsonObject NSDictionary (see JSON View in Google)
                 for (NSDictionary *moviesDict in jsonObject[@"movies"]) {
                     Movie *movies = [[Movie alloc] init];
                     movies.movieTitle = moviesDict[@"title"];
@@ -75,7 +81,6 @@
     
     // Call resume on the task to start it -- like pressing enter in a web browser to navigate to a webpage/ retrieve the data
     [dataTask resume];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,7 +88,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
@@ -107,7 +112,11 @@
     return cell;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(20, 30, 20, 30);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     MovieDetailsViewController *detailVC = (MovieDetailsViewController *) segue.destinationViewController;
     NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];

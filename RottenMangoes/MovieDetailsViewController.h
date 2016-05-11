@@ -2,7 +2,7 @@
 //  MovieDetailsViewController.h
 //  RottenMangoes
 //
-//  Created by Tenzin Phagdol on 2016-03-28.
+//  Created by Jeffrey Ip on 2016-03-28.
 //  Copyright © 2016 Jeffrey Ip. All rights reserved.
 //
 
@@ -15,10 +15,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsYear;
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsMPAA;
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailsRunTime;
-@property (weak, nonatomic) IBOutlet UILabel *movieDetailsSynopsis;
-@property (weak, nonatomic) IBOutlet UILabel *review1;
-@property (weak, nonatomic) IBOutlet UILabel *review2;
-@property (weak, nonatomic) IBOutlet UILabel *review3;
+@property (weak, nonatomic) IBOutlet UITextView *movieDetailsSynopsis;
+@property (weak, nonatomic) IBOutlet UITextView *review1;
+@property (weak, nonatomic) IBOutlet UITextView *review2;
+@property (weak, nonatomic) IBOutlet UITextView *review3;
+@property (weak, nonatomic) IBOutlet UIImageView *reviewFreshness1;
+@property (weak, nonatomic) IBOutlet UIImageView *reviewFreshness2;
+@property (weak, nonatomic) IBOutlet UIImageView *reviewFreshness3;
 
 
 @property (strong, nonatomic) Movie *movieDetails;
