@@ -26,7 +26,7 @@
     [self getReviews];
     self.mapButton.layer.cornerRadius = 8;
     self.mapButton.clipsToBounds = YES;
-
+    //comment for nothing
 }
 
 - (void)getReviews {
